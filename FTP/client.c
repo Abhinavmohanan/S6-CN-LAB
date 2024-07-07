@@ -20,8 +20,9 @@ int main(){
         scanf("%s",filename);
         send(sock_fd,filename,sizeof(filename),0);
         char buf[4096];
+        printf("\n");
         while (recv(sock_fd,buf,sizeof(buf),0) != 0) {
-            printf("%s\n");
+            printf("%s",buf);
         }   
     }else{
         printf("Failed to connect");
